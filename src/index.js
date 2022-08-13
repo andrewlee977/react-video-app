@@ -4,7 +4,7 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 
-const API_KEY = 'AIzaSyDYUyLJ0-tpsFRXsHXq6hi3LO0TH18ofak';
+const API_KEY = '';
 
 // Create a new component. This component should produce some HTML
 // const = ES6 syntax
