@@ -1,11 +1,8 @@
 // import React, and pull off property Component
 import React, { Component } from 'react';
 
-// const SearchBar = () => {
-//     return <input />;
-// };
-
 // extends React.Component => gives access to all the functionality that React.Component has
+// React.Component turns JS into HTML
 class SearchBar extends Component {
     constructor(props) {
         super(props);
@@ -16,21 +13,19 @@ class SearchBar extends Component {
 
     // every class needs render function that returns JSX
     render = () => {
-        // JS variables should always be in brackets
-        // (1) return <input onChange={this.onInputChange} />;
         return (
-            <div>
+            <div className="search-bar">
                 <input 
-                value={this.state.term}
-                onChange={(event) => this.setState({ term: event.target.value })} />
+                    value={this.state.term}
+                    onChange={event => this.onInputChange(event.target.value)} />
             </div>
         );
     }
 
-    // (1)
-    // onInputChange = (event) => {
-    //     console.log(event.target.value);
-    // }
+    onInputChange(term) {
+        this.setState({term});
+        this.props.onSearchTermChange(term);
+    }
 }
 
 export default SearchBar;
